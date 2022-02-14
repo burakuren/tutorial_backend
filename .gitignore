@@ -1,5 +1,5 @@
-/flask/env
+/flask/venv
 /flask/__pycache__
 /flask/app/__pycache__
 /database/*.db
-/home/burak/again_tutorial/backend/flask/.env
+.env
