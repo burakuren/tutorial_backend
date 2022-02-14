@@ -2,7 +2,6 @@ atomicwrites==1.1.5
 attrs==19.3.0
 beautifulsoup4==4.8.2
 blinker==1.4
-Brlapi==0.7.0
 cachetools==4.2.4
 certifi==2019.11.28
 chardet==3.0.4
