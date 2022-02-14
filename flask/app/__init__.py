@@ -42,9 +42,9 @@ def create_app():
     return app
 
 def create_database(app):
-    if not path.exists("../../../backend/database"+ DB_NAME):
+    if not path.exists("../../backend/database"+ DB_NAME):
         db.create_all(app = app)
         print("Database Created")
     
-    elif path.exists("../../../backend/database"+ DB_NAME):
+    elif path.exists("../../backend/database"+ DB_NAME):
         print("Database already created, please delete it and try again.")
