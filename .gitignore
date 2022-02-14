@@ -1,0 +1,5 @@
+/flask/env
+/flask/__pycache__
+/flask/app/__pycache__
+/database/*.db
+/.env
