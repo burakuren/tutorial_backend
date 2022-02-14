@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
         app:
-                build: ./app
+                build: ./flask/app
                 container_name: app
                 restart: always
                 expose:
