@@ -8,7 +8,7 @@ import sqlalchemy
 load_dotenv()
 secret_key = getenv("secret_key")
 sqlalchemy_database_uri = getenv("sqlalchemy_database_uri")
-DB_NAME = getenv("db_name")
+db_name = getenv("db_name")
 
 db = SQLAlchemy()
 
@@ -42,9 +42,9 @@ def create_app():
     return app
 
 def create_database(app):
-    if not path.exists("../../backend/database"+ DB_NAME):
+    if not path.exists("../../backend/database"+ db_name):
         db.create_all(app = app)
         print("Database Created")
     
-    elif path.exists("../../backend/database"+ DB_NAME):
+    elif path.exists("../../backend/database"+ db_name):
         print("Database already created, please delete it and try again.")
