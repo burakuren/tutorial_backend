@@ -1,9 +1,8 @@
 from flask import Flask
-from flask_sqlalchemy import SQLAlchemy
-from os import path,getenv
+from flask_sqlalchemy import SQLAlchemy 
+from os import getenv
 from flask_login import LoginManager
 from dotenv import load_dotenv
-import sqlalchemy
 
 load_dotenv()
 secret_key = getenv("secret_key")
@@ -23,8 +22,8 @@ def create_app():
 
     from .models import User,Note
 
-    create_database(app)
-
+    db.create_all(app = app)
+    
     login_manager = LoginManager()
     login_manager.login_view = "auth.login"
     login_manager.init_app(app)
@@ -40,11 +39,3 @@ def create_app():
     app.register_blueprint(auth)
 
     return app
-
-def create_database(app):
-    if not path.exists("../../backend/database"+ db_name):
-        db.create_all(app = app)
-        print("Database Created")
-    
-    elif path.exists("../../backend/database"+ db_name):
-        print("Database already created, please delete it and try again.")
